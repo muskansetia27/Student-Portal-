@@ -1,0 +1,79 @@
+<form class="form-horizontal" #f="ngForm">
+    <fieldset>
+      <legend>Input information</legend>
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Full Name</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" name="inputFirstName"
+                 placeholder="Eg: Muskan Setia" required [(ngModel)]="new_firstName" #FirstName="ngModel">
+          <div *ngIf="FirstName.errors && (FirstName.dirty || FirstName.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!FirstName.errors.required">
+              Full Name is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Roll Number</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" name="inputLastName"
+                 placeholder="Eg: R110217***" [(ngModel)]="new_lastName" #LastName="ngModel" required>
+          <div *ngIf="LastName.errors && (LastName.dirty || LastName.touched)" class="alert alert-danger">
+            <div [hidden]="!LastName.errors.required">
+              Roll Number is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label">SAP ID</label>
+        <div class="col-lg-10">
+          <input type="number" class="form-control" name="inputEmail"
+                 placeholder="Eg: 5000*****" [(ngModel)]="new_email" #email="ngModel" required>
+          <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+            <div [hidden]="!email.errors.required">
+              SAP ID is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Total Lectures</label>
+        <div class="col-lg-10">
+          <input type="number" class="form-control" name="textArea" [(ngModel)]="new_comments"
+                    #comments="ngModel" placeholder="Eg: 38" required>
+          <div *ngIf="comments.errors && (comments.dirty || comments.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!comments.errors.required">
+              Days are required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Attended Lectures</label>
+        <div class="col-lg-10">
+          <input type="number" class="form-control" name="optionsRadios" id="optionsRadios1" value="0"
+                 placeholder="Eg: 36" [(ngModel)]="new_options" #radio="ngModel" required>
+                 <div *ngIf="comments.errors && (comments.dirty || comments.touched)"
+                 class="alert alert-danger">
+              <div [hidden]="!comments.errors.required">
+                Days are required
+              </div>
+            </div>
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <button type="reset" class="btn btn-default" (click)="f.reset()">Cancel</button>
+          <button type="submit" class="btn btn-primary"
+                  (click)="createPerson(new_lastName, new_firstName,
+                  new_email, new_comments, new_options); f.reset()"
+                  [disabled]="!f.form.valid">Submit</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  

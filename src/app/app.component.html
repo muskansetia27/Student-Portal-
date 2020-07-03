@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+
+  <span>Student-Portal</span>
+  <span class="example-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>menu</mat-icon> Menu</button>
+</mat-toolbar>
+<mat-menu #appMenu="matMenu">
+  
+  <span class="alignright"></span>
+  <button mat-menu-item [routerLink]="['/forms']" routerLinkActive="acitive">
+    <mat-icon>assignment_ind</mat-icon>
+    <span>Input Information</span>
+  </button>
+  <button mat-menu-item [routerLink]="['/database']" routerLinkActive="acitive">
+    <mat-icon>assignment</mat-icon>
+    <span>Database Records</span>
+  </button>
+  <button mat-menu-item [routerLink]="['/attendance']" routerLinkActive="acitive">
+    <mat-icon>assessment</mat-icon>
+    <span>Attendance</span>
+  </button>
+  </mat-menu>
+
+
+
+
+<app-navbar></app-navbar>
+<div class="main">
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
