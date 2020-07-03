@@ -1,5 +1,7 @@
 # Student-Portal
 
+A portal made in angular 9 for storing information about students and then storing the results in DynamoDB with the help if API Gateway and AWS Lambda.Then through the stored information ,the attendance of all the students is shown using Charts.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
 ## Development server
